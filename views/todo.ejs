@@ -88,24 +88,31 @@
         </style>
     </head>
 
-    <body>
-        <h1>Hello Junoon Batch 8 (Jenkins), Write your plan on Learning Jenkins</h1>
-        <ul>
+   <body style="font-family: Arial, sans-serif; background-color: #f5f5f5; margin: 0; padding: 0;">
+    <div style="background-color: #4CAF50; padding: 20px; color: white; text-align: center;">
+        <h1>Hello ! This Is From FAISAL </h1>
+        <h2>Learning Jenkins with CI/CD Pipeline</h2>
+        <p style="font-size: 16px; max-width: 800px; margin: auto;">
+            Welcome! This is your Jenkins-deployed TODO list app. Use this platform to plan your journey in mastering Jenkins, CI/CD, and DevOps fundamentals. Every task you write below brings you one step closer to becoming a DevOps pro!
+        </p>
+    </div>
+
+    <div style="max-width: 800px; margin: 30px auto; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <form action="/todo/add/" method="post" style="margin-bottom: 20px;">
+            <label for="newtodo" style="display: block; font-weight: bold; margin-bottom: 10px;">What should I do?</label>
+            <input type="text" name="newtodo" id="newtodo" autofocus style="width: 70%; padding: 10px; font-size: 16px;" />
+            <input type="submit" value="Add" style="padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; border: none; cursor: pointer;" />
+        </form>
+
+        <ul style="list-style-type: none; padding-left: 0;">
             <% todolist.forEach(function(todo, index) { %>
-            <li>
-                <a href="/todo/delete/<%= index %>" class="delete-btn">✘</a>
-                <a href="/todo/<%= index %>" class="edit-btn">✎</a>
-                <%- todo %>
-            </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #ddd;">
+                    <a href="/todo/delete/<%= index %>" class="delete-btn" style="color: red; margin-right: 15px; text-decoration: none;">✘</a>
+                    <a href="/todo/<%= index %>" class="edit-btn" style="color: #2196F3; margin-right: 15px; text-decoration: none;">✎</a>
+                    <span><%- todo %></span>
+                </li>
             <% }); %>
         </ul>
-
-        <form action="/todo/add/" method="post">
-            <p>
-                <label for="newtodo">What should I do?</label>
-                <input type="text" name="newtodo" id="newtodo" autofocus />
-                <input type="submit" value="Add" />
-            </p>
-        </form>
-    </body>
+    </div>
+</body>
 </html>
